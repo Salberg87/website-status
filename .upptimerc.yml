@@ -63,15 +63,12 @@ status-website:
   # Custom HTML for branding
   customHeadHtml: |
     <meta name="theme-color" content="#0F172A">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://salberg87.github.io/website-status/custom.css">
     <style>
       /* Critical inline overrides for Svelte scoped styles */
       div.down, div.up, div.degraded, div.link.graph,
       [class*="link"][class*="graph"][class*="svelte"] {
-        border-left: 4px solid #16A34A !important;
+        border-left: 4px solid #10B981 !important;
       }
     </style>
 
