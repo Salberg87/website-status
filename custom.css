@@ -1,0 +1,186 @@
+/* Hibas Status Page - Custom Theme */
+
+:root {
+  /* Hibas Brand Colors */
+  --color-primary: #1a365d;      /* Deep navy blue */
+  --color-secondary: #2c5282;    /* Medium blue */
+  --color-accent: #ed8936;       /* Orange accent */
+  --color-success: #38a169;      /* Green for "up" */
+  --color-danger: #e53e3e;       /* Red for "down" */
+  --color-warning: #d69e2e;      /* Yellow for "degraded" */
+
+  /* Background & Text */
+  --color-bg: #f7fafc;
+  --color-bg-card: #ffffff;
+  --color-text: #2d3748;
+  --color-text-muted: #718096;
+
+  /* Shadows & Borders */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a202c;
+    --color-bg-card: #2d3748;
+    --color-text: #e2e8f0;
+    --color-text-muted: #a0aec0;
+  }
+}
+
+/* Global styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Header / Navbar */
+header, nav, .navbar {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+  box-shadow: var(--shadow-md);
+}
+
+header a, nav a, .navbar a {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Logo area */
+.logo, header img {
+  max-height: 48px;
+  filter: brightness(0) invert(1); /* Make logo white */
+}
+
+/* Status cards */
+.site, .endpoint, article {
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.site:hover, .endpoint:hover, article:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Status indicators */
+.status-up, .up, [class*="success"] {
+  color: var(--color-success) !important;
+}
+
+.status-down, .down, [class*="danger"], [class*="error"] {
+  color: var(--color-danger) !important;
+}
+
+.status-degraded, .degraded, [class*="warning"] {
+  color: var(--color-warning) !important;
+}
+
+/* Status badges */
+.badge, .tag, .status-badge {
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Buttons */
+button, .btn, [role="button"] {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--color-secondary);
+}
+
+/* Links */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Intro section */
+.intro, .hero, main > section:first-child {
+  text-align: center;
+  padding: 2rem;
+}
+
+.intro h1, .hero h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Response time graph colors */
+.graph-up, .success-bg {
+  background-color: var(--color-success) !important;
+}
+
+.graph-down, .danger-bg {
+  background-color: var(--color-danger) !important;
+}
+
+/* Footer */
+footer {
+  background: var(--color-bg-card);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+/* Hibas branding footer text */
+footer::after {
+  content: " | Driftet av Pifre";
+  color: var(--color-text-muted);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .intro h1, .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  header, nav {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Animation for status changes */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.status-checking {
+  animation: pulse 2s infinite;
+}
+
+/* All systems operational banner */
+.all-ok, .operational {
+  background: linear-gradient(135deg, var(--color-success) 0%, #48bb78 100%);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 600;
+}
