@@ -1,59 +1,461 @@
-/* Hibas Status Page - Clean Custom Theme */
+/*
+ * HIBAS Status Page - Nordic Professional Theme
+ * A clean, trustworthy design matching Hibas brand language
+ * --------------------------------------------------------
+ */
 
+/* Import professional font pairing */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ========================
+   CSS CUSTOM PROPERTIES
+   ======================== */
 :root {
   /* Hibas Brand Colors */
-  --primary: #1a365d;
-  --secondary: #2c5282;
-  --accent: #ed8936;
+  --hibas-green: #1B6B3E;
+  --hibas-green-light: #2A8B52;
+  --hibas-green-subtle: #E8F5EC;
+
+  /* Neutral Palette - Nordic Minimalism */
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748B;
+  --slate-400: #94A3B8;
+  --slate-200: #E2E8F0;
+  --slate-100: #F1F5F9;
+  --slate-50: #F8FAFC;
+  --white: #FFFFFF;
+
+  /* Status Colors */
+  --status-up: #16A34A;
+  --status-up-bg: #DCFCE7;
+  --status-down: #DC2626;
+  --status-down-bg: #FEE2E2;
+  --status-degraded: #D97706;
+  --status-degraded-bg: #FEF3C7;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  /* Typography */
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+
+  /* Effects */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Header styling */
-nav.svelte-a08hsz {
-  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%) !important;
+/* ========================
+   GLOBAL RESETS & BASE
+   ======================== */
+* {
+  box-sizing: border-box;
 }
 
-/* Keep logo visible (don't invert Hibas logo) */
-nav img.svelte-a08hsz {
+html {
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans) !important;
+  background: linear-gradient(180deg, var(--slate-50) 0%, var(--white) 100%) !important;
+  color: var(--slate-800) !important;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ========================
+   NAVIGATION / HEADER
+   ======================== */
+nav, nav.svelte-a08hsz {
+  background: var(--slate-900) !important;
+  box-shadow: var(--shadow-lg) !important;
+  padding: var(--space-4) var(--space-6) !important;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .container, nav div.svelte-a08hsz {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav a, nav.svelte-a08hsz a {
+  color: var(--white) !important;
+  font-weight: 500 !important;
+  font-size: var(--font-size-sm) !important;
+  text-decoration: none !important;
+  padding: var(--space-2) var(--space-4) !important;
+  border-radius: var(--radius) !important;
+  transition: background var(--transition), opacity var(--transition) !important;
+  opacity: 0.85;
+}
+
+nav a:hover, nav.svelte-a08hsz a:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  opacity: 1 !important;
+  text-decoration: none !important;
+}
+
+nav .logo, nav a.logo.svelte-a08hsz {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--space-3) !important;
+  font-weight: 700 !important;
+  font-size: var(--font-size-lg) !important;
+  opacity: 1 !important;
+}
+
+nav .logo img, nav img.svelte-a08hsz {
+  height: 32px !important;
+  width: auto !important;
   filter: none !important;
 }
 
-/* Site cards - override red border with green */
-.svelte-fqsq6s.live-status > div,
-.link.graph.svelte-fqsq6s,
-div.down.svelte-fqsq6s,
-div.up.svelte-fqsq6s,
-.live-status div[class*="svelte"] {
-  border-left-color: #38a169 !important;
+nav ul, nav.svelte-a08hsz ul {
+  display: flex !important;
+  gap: var(--space-1) !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Site names - use dark text, not red */
+/* ========================
+   MAIN CONTENT AREA
+   ======================== */
+main, main.container {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding: var(--space-8) var(--space-6) !important;
+}
+
+/* ========================
+   INTRO / HERO SECTION
+   ======================== */
+header.svelte-ngkazm {
+  text-align: center !important;
+  padding: var(--space-12) var(--space-6) !important;
+  margin-bottom: var(--space-8) !important;
+  background: var(--white) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--slate-200) !important;
+}
+
+header.svelte-ngkazm h1,
+header h1 {
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-3xl) !important;
+  font-weight: 700 !important;
+  color: var(--slate-900) !important;
+  margin: 0 0 var(--space-4) 0 !important;
+  letter-spacing: -0.02em !important;
+}
+
+header.svelte-ngkazm p,
+header .lead,
+header p.svelte-ngkazm {
+  font-size: var(--font-size-lg) !important;
+  color: var(--slate-600) !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  line-height: 1.7 !important;
+}
+
+/* ========================
+   ALL SYSTEMS OPERATIONAL
+   ======================== */
+section.svelte-8lnl4f > div:first-child,
+.all-systems-operational {
+  background: var(--status-up-bg) !important;
+  color: var(--hibas-green) !important;
+  padding: var(--space-4) var(--space-6) !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--space-3) !important;
+  margin-bottom: var(--space-6) !important;
+  border: 1px solid rgba(22, 163, 74, 0.2) !important;
+}
+
+/* ========================
+   LIVE STATUS SECTION
+   ======================== */
+h2 {
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: 600 !important;
+  color: var(--slate-800) !important;
+  margin-bottom: var(--space-4) !important;
+}
+
+/* Time filter tabs */
+form.svelte-fqsq6s {
+  display: flex !important;
+  gap: var(--space-1) !important;
+  background: var(--slate-100) !important;
+  padding: var(--space-1) !important;
+  border-radius: var(--radius) !important;
+}
+
+form.svelte-fqsq6s label {
+  font-size: var(--font-size-sm) !important;
+  font-weight: 500 !important;
+  color: var(--slate-600) !important;
+  padding: var(--space-2) var(--space-3) !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all var(--transition) !important;
+}
+
+form.svelte-fqsq6s input:checked + label {
+  background: var(--white) !important;
+  color: var(--slate-900) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* ========================
+   STATUS CARDS - THE FIX
+   ======================== */
+section.live-status,
+.live-status {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: var(--space-3) !important;
+}
+
+/* Override ALL status card borders to green */
+.live-status > div,
+section.live-status > div,
+div.down, div.up, div.degraded,
+div.link.graph,
+[class*="link"][class*="graph"],
+.svelte-fqsq6s > div {
+  background: var(--white) !important;
+  border: 1px solid var(--slate-200) !important;
+  border-left: 4px solid var(--status-up) !important;
+  border-radius: var(--radius) !important;
+  padding: var(--space-4) var(--space-6) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all var(--transition) !important;
+}
+
+.live-status > div:hover,
+section.live-status > div:hover,
+div.link.graph:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--slate-300) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Site names in cards */
 .svelte-fqsq6s h2,
 .svelte-fqsq6s h3,
-.svelte-fqsq6s a {
-  color: #2d3748 !important;
+.svelte-fqsq6s a,
+.live-status a,
+.live-status h3 {
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-base) !important;
+  font-weight: 600 !important;
+  color: var(--slate-900) !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--space-2) !important;
+  margin-bottom: var(--space-2) !important;
 }
 
-/* Uptime percentage and response time - dark gray */
+.svelte-fqsq6s a:hover,
+.live-status a:hover {
+  color: var(--hibas-green) !important;
+}
+
+/* Stats text in cards */
 .svelte-fqsq6s p,
-.svelte-fqsq6s span {
-  color: #4a5568 !important;
+.svelte-fqsq6s span,
+.live-status p,
+.live-status span {
+  font-size: var(--font-size-sm) !important;
+  color: var(--slate-500) !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
 }
 
-/* All systems operational - green banner */
-.svelte-8lnl4f > div:first-child {
-  background-color: #38a169 !important;
-  color: white !important;
+/* Uptime graph bars */
+.graph rect,
+.uptime-bar {
+  fill: var(--status-up) !important;
 }
 
-/* Footer branding */
-footer.svelte-jbr799::after {
-  content: " | Driftet av Pifre";
-  display: block;
-  margin-top: 0.5rem;
-  color: #718096;
+/* ========================
+   INCIDENTS SECTION
+   ======================== */
+section h2 {
+  border-bottom: 1px solid var(--slate-200) !important;
+  padding-bottom: var(--space-3) !important;
+  margin-top: var(--space-8) !important;
 }
 
-/* Intro section header */
-header.svelte-ngkazm h1 {
-  color: #1a365d !important;
+/* ========================
+   FOOTER
+   ======================== */
+footer, footer.svelte-jbr799 {
+  background: var(--slate-900) !important;
+  color: var(--slate-400) !important;
+  padding: var(--space-8) var(--space-6) !important;
+  margin-top: var(--space-12) !important;
+  text-align: center !important;
+  font-size: var(--font-size-sm) !important;
+}
+
+footer a, footer.svelte-jbr799 a {
+  color: var(--slate-300) !important;
+  text-decoration: none !important;
+  transition: color var(--transition) !important;
+}
+
+footer a:hover, footer.svelte-jbr799 a:hover {
+  color: var(--white) !important;
+}
+
+footer::after, footer.svelte-jbr799::after {
+  content: "Driftet av Pifre" !important;
+  display: block !important;
+  margin-top: var(--space-3) !important;
+  padding-top: var(--space-3) !important;
+  border-top: 1px solid var(--slate-800) !important;
+  color: var(--slate-500) !important;
+  font-size: var(--font-size-sm) !important;
+}
+
+/* ========================
+   LOADING STATES
+   ======================== */
+.loading, .svelte-68jxue {
+  display: flex !important;
+  justify-content: center !important;
+  padding: var(--space-8) !important;
+}
+
+.loading svg {
+  stroke: var(--slate-400) !important;
+}
+
+/* ========================
+   RESPONSIVE ADJUSTMENTS
+   ======================== */
+@media (max-width: 768px) {
+  nav, nav.svelte-a08hsz {
+    padding: var(--space-3) var(--space-4) !important;
+  }
+
+  nav ul, nav.svelte-a08hsz ul {
+    gap: 0 !important;
+  }
+
+  nav a, nav.svelte-a08hsz a {
+    padding: var(--space-2) !important;
+    font-size: 0.8rem !important;
+  }
+
+  main, main.container {
+    padding: var(--space-4) !important;
+  }
+
+  header.svelte-ngkazm {
+    padding: var(--space-6) var(--space-4) !important;
+  }
+
+  header.svelte-ngkazm h1 {
+    font-size: var(--font-size-2xl) !important;
+  }
+
+  .live-status > div,
+  div.link.graph {
+    padding: var(--space-3) var(--space-4) !important;
+  }
+}
+
+/* ========================
+   SUBTLE ANIMATIONS
+   ======================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main > * {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+main > *:nth-child(1) { animation-delay: 0.05s; }
+main > *:nth-child(2) { animation-delay: 0.1s; }
+main > *:nth-child(3) { animation-delay: 0.15s; }
+main > *:nth-child(4) { animation-delay: 0.2s; }
+main > *:nth-child(5) { animation-delay: 0.25s; }
+
+/* ========================
+   DARK MODE SUPPORT
+   ======================== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--slate-900) !important;
+    color: var(--slate-200) !important;
+  }
+
+  header.svelte-ngkazm {
+    background: var(--slate-800) !important;
+    border-color: var(--slate-700) !important;
+  }
+
+  header.svelte-ngkazm h1 {
+    color: var(--white) !important;
+  }
+
+  header.svelte-ngkazm p {
+    color: var(--slate-400) !important;
+  }
+
+  .live-status > div,
+  div.link.graph {
+    background: var(--slate-800) !important;
+    border-color: var(--slate-700) !important;
+  }
+
+  .svelte-fqsq6s h2,
+  .svelte-fqsq6s h3,
+  .svelte-fqsq6s a {
+    color: var(--white) !important;
+  }
+
+  form.svelte-fqsq6s {
+    background: var(--slate-800) !important;
+  }
+
+  form.svelte-fqsq6s input:checked + label {
+    background: var(--slate-700) !important;
+    color: var(--white) !important;
+  }
 }
