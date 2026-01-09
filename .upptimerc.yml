@@ -66,6 +66,14 @@ status-website:
     <link rel="stylesheet" href="https://salberg87.github.io/website-status/custom.css">
     <style>
       .logo img { max-height: 40px; }
+      /* Force green border on all status cards */
+      .live-status > div,
+      section.live-status > div,
+      div.down, div.up, div.degraded,
+      [class*="link"][class*="graph"] {
+        border-left-color: #38a169 !important;
+        border-left: 3px solid #38a169 !important;
+      }
     </style>
 
 # =============================================================================
