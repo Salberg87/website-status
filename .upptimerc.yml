@@ -61,9 +61,10 @@ status-website:
       href: https://hafjellhytter.no
       target: _blank
 
-  # Custom HTML for footer branding
+  # Custom HTML for branding
   customHeadHtml: |
     <meta name="theme-color" content="#1a365d">
+    <link rel="stylesheet" href="/website-status/custom.css">
     <style>
       .logo img { max-height: 40px; }
     </style>
