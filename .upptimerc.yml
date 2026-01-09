@@ -34,16 +34,39 @@ sites:
 # =============================================================================
 status-website:
   baseUrl: /website-status
-  logoUrl: https://test.hibas.no/favicon.ico
-  name: Hibas Status
-  introTitle: "**Hibas** er oppe og kjører"
-  introMessage: Denne siden viser status for Hibas sine nettsider. Oppdateres automatisk hvert 5. minutt.
+
+  # Branding
+  logoUrl: https://assets-test.hibas.no/images/Hibas_logo2.svg
+  favicon: https://test.hibas.no/favicon.ico
+  name: Hibas
+
+  # Theme & Styling
+  theme: light
+  css: custom.css
+
+  # Content
+  introTitle: "**Driftsstatus**"
+  introMessage: |
+    Velkommen til Hibas sin statusside. Her kan du se sanntidsstatus for alle våre nettsider.
+    Siden oppdateres automatisk hvert 5. minutt.
+
+  # Navigation
   navbar:
     - title: Status
       href: /
-    - title: Hibas
+    - title: Hibas.no
       href: https://hibas.no
       target: _blank
+    - title: Hafjell Hytter
+      href: https://hafjellhytter.no
+      target: _blank
+
+  # Custom HTML for footer branding
+  customHeadHtml: |
+    <meta name="theme-color" content="#1a365d">
+    <style>
+      .logo img { max-height: 40px; }
+    </style>
 
 # =============================================================================
 # NOTIFICATIONS
