@@ -42,7 +42,6 @@ status-website:
 
   # Theme & Styling
   theme: light
-  css: custom.css
 
   # Content
   introTitle: "**Driftsstatus**"
@@ -64,7 +63,7 @@ status-website:
   # Custom HTML for branding
   customHeadHtml: |
     <meta name="theme-color" content="#1a365d">
-    <link rel="stylesheet" href="/website-status/custom.css">
+    <link rel="stylesheet" href="https://salberg87.github.io/website-status/custom.css">
     <style>
       .logo img { max-height: 40px; }
     </style>
