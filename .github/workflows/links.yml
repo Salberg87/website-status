@@ -1,0 +1,62 @@
+# Broken Link Checker for Hibas Sites
+# Runs weekly and can be triggered manually
+# Results appear in GitHub Actions logs
+
+name: Check Broken Links
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"  # Every Monday at 07:00 UTC
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  linkcheck:
+    name: Check Links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check test.hibas.no
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,204,301,302,307,308
+            --exclude-mail
+            --timeout 30
+            https://test.hibas.no
+          fail: false
+        continue-on-error: true
+
+      - name: Check preview.hibas.no
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,204,301,302,307,308
+            --exclude-mail
+            --timeout 30
+            https://preview.hibas.no
+          fail: false
+        continue-on-error: true
+
+      - name: Check hafjellhytter.no
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,204,301,302,307,308
+            --exclude-mail
+            --timeout 30
+            https://hafjellhytter.no
+          fail: false
+        continue-on-error: true
+
+      - name: Summary
+        run: |
+          echo "Link check complete. Review logs above for broken links."
