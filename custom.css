@@ -17,8 +17,12 @@ nav img.svelte-a08hsz {
   filter: none !important;
 }
 
-/* Site cards - remove red border, use green for up status */
-.svelte-fqsq6s.live-status > div {
+/* Site cards - override red border with green */
+.svelte-fqsq6s.live-status > div,
+.link.graph.svelte-fqsq6s,
+div.down.svelte-fqsq6s,
+div.up.svelte-fqsq6s,
+.live-status div[class*="svelte"] {
   border-left-color: #38a169 !important;
 }
 
