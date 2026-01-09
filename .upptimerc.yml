@@ -33,7 +33,7 @@ sites:
 # STATUS PAGE CONFIGURATION
 # =============================================================================
 status-website:
-  baseUrl: /hibas-status
+  baseUrl: /website-status
   logoUrl: https://test.hibas.no/favicon.ico
   name: Hibas Status
   introTitle: "**Hibas** er oppe og kjører"
@@ -48,14 +48,12 @@ status-website:
 # =============================================================================
 # NOTIFICATIONS
 # =============================================================================
-# UPDATE: Replace with your actual email
+# Email notifications
 notifications:
   - type: email
-    to: YOUR_EMAIL@example.com  # <-- UPDATE THIS
-
-# Optional: Add Slack webhook
-# - type: slack
-#   channel: monitoring
+    to: fredrik@pifre.no
+  - type: email
+    to: Hansi@hibas.no
 
 # =============================================================================
 # INCIDENT SETTINGS
