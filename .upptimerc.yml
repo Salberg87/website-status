@@ -62,13 +62,14 @@ status-website:
 
   # Custom HTML for branding
   customHeadHtml: |
-    <meta name="theme-color" content="#0F172A">
+    <meta name="theme-color" content="#2563EB">
     <link rel="stylesheet" href="https://salberg87.github.io/website-status/custom.css">
     <style>
-      /* Critical inline overrides for Svelte scoped styles */
+      /* Critical inline overrides for Svelte scoped styles - Blue top border */
       div.down, div.up, div.degraded, div.link.graph,
       [class*="link"][class*="graph"][class*="svelte"] {
-        border-left: 4px solid #10B981 !important;
+        border-top: 3px solid #2563EB !important;
+        border-left: none !important;
       }
     </style>
 
