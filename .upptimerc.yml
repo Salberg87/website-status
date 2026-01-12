@@ -8,6 +8,11 @@ repo: website-status
 # SITES TO MONITOR
 # =============================================================================
 sites:
+  # TEMPORARY - Testing notifications (remove after test)
+  - name: Test Alert (DELETE ME)
+    url: https://this-site-does-not-exist-12345.fake
+    maxResponseTime: 1000
+
   - name: Hibas Test
     url: https://test.hibas.no
     maxResponseTime: 5000
