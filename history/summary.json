@@ -15,7 +15,9 @@
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-01-13": 0
+    }
   },
   {
     "name": "Hibas Preview",
