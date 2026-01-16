@@ -1,7 +1,7 @@
 url: https://test.hibas.no
-status: down
+status: degraded
 code: 500
-responseTime: 2217
-lastUpdated: 2026-01-16T09:48:19.548Z
+responseTime: 13860
+lastUpdated: 2026-01-16T16:19:10.091Z
 startTime: 2026-01-09T13:42:26.214Z
 generator: Upptime <https://github.com/upptime/upptime>
