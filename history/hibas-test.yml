@@ -1,7 +1,7 @@
 url: https://test.hibas.no
-status: up
-code: 200
-responseTime: 3880
-lastUpdated: 2026-01-16T09:09:11.012Z
+status: down
+code: 500
+responseTime: 2217
+lastUpdated: 2026-01-16T09:48:19.548Z
 startTime: 2026-01-09T13:42:26.214Z
 generator: Upptime <https://github.com/upptime/upptime>
