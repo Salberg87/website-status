@@ -5,18 +5,18 @@
     "icon": "https://test.hibas.no/favicon.ico",
     "slug": "hibas-test",
     "status": "down",
-    "uptime": "39.51%",
+    "uptime": "39.49%",
     "uptimeDay": "0.00%",
     "uptimeWeek": "0.00%",
-    "uptimeMonth": "39.51%",
-    "uptimeYear": "39.51%",
+    "uptimeMonth": "39.49%",
+    "uptimeYear": "39.49%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2026-01-26": 1196,
+      "2026-01-26": 1208,
       "2026-01-25": 1440,
       "2026-01-24": 1440,
       "2026-01-23": 1440,
@@ -47,7 +47,9 @@
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-01-26": 0
+    }
   },
   {
     "name": "Hafjell Hytter",
