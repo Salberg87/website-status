@@ -1,7 +1,7 @@
 url: https://test.hibas.no
-status: down
+status: degraded
 code: 401
-responseTime: 265
-lastUpdated: 2026-02-10T16:00:46.425Z
+responseTime: 7570
+lastUpdated: 2026-02-10T21:23:24.157Z
 startTime: 2026-01-09T13:42:26.214Z
 generator: Upptime <https://github.com/upptime/upptime>
